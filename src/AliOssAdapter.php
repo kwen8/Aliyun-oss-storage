@@ -7,6 +7,7 @@
 
 namespace Kwen\AliOSS;
 
+use Illuminate\Support\Facades\URL;
 use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\AdapterInterface;
 use League\Flysystem\Config;
@@ -565,6 +566,9 @@ class AliOssAdapter extends AbstractAdapter
      */
     public function getUrl( $path )
     {
+        if (URL::isValidUrl($path)) {
+            return $path;
+        }
         if (!$this->has($path)) {
             return false;
         }
