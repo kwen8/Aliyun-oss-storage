@@ -1,9 +1,9 @@
 <?php
 
-namespace Jacobcyl\AliOSS;
+namespace Kwen\AliOSS;
 
-use Jacobcyl\AliOSS\Plugins\PutFile;
-use Jacobcyl\AliOSS\Plugins\PutRemoteFile;
+use Kwen\AliOSS\Plugins\PutFile;
+use Kwen\AliOSS\Plugins\PutRemoteFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
