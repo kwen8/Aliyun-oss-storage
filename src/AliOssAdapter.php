@@ -569,7 +569,7 @@ class AliOssAdapter extends AbstractAdapter
         if (URL::isValidUrl($path)) {
             return $path;
         }
-        if (!$this->has($path)) {
+        if ($this->debug && !$this->has($path)) {
             return false;
         }
         return ( $this->ssl ? 'https://' : 'http://' ) . ( $this->isCname ? ( $this->cdnDomain == '' ? $this->endPoint : $this->cdnDomain ) : $this->bucket . '.' . $this->endPoint ) . '/' . ltrim($path, '/');
